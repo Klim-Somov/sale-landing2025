@@ -15,13 +15,13 @@
             <NuxtLink @click="isMenu = false">Мой таксопарк</NuxtLink>
           </li>
           <li
-            @click.prevent="scrollToBlock('taxopark')"
+            @click.prevent="scrollToBlock('threats')"
             class="header__menu-item"
           >
             <NuxtLink @click="isMenu = false">Угрозы</NuxtLink>
           </li>
           <li
-            @click.prevent="scrollToBlock('threats')"
+            @click.prevent="scrollToBlock('whatToDo')"
             class="header__menu-item"
           >
             <NuxtLink @click="isMenu = false">Что делать?</NuxtLink>
