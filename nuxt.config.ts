@@ -17,7 +17,6 @@ export default defineNuxtConfig({
     mailhost: 'smtp',
     mailfrom: 'info@paytaxi.ru',
     mailto: 'info@paytaxi.ru, sale@paytaxi.ru',
-    secret_key: process.env.SECRET_KEY,
     public: {
       site: 'https://paytaxi.ru/',
       phone: '',
