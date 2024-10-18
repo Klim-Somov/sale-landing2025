@@ -26,6 +26,9 @@
           >
             <NuxtLink @click="isMenu = false">Что делать?</NuxtLink>
           </li>
+          <li @click.prevent="scrollToBlock('help')" class="header__menu-item">
+            <NuxtLink @click="isMenu = false">Помощь</NuxtLink>
+          </li>
         </ul>
         <div class="header__phone">
           <a href="tel:+78006003043">+7 (800) 600 30-43</a>
@@ -49,6 +52,12 @@
             </li>
             <li @click.prevent="scrollToBlock('whatToDo')">
               <NuxtLink @click="isMenu = false">Что делать?</NuxtLink>
+            </li>
+            <li
+              @click.prevent="scrollToBlock('help')"
+              class="header__menu-item"
+            >
+              <NuxtLink @click="isMenu = false">Помощь</NuxtLink>
             </li>
           </ul>
         </div>
@@ -317,7 +326,7 @@
   </section>
 
   <div class="_container">
-    <section class="form">
+    <section ref="help" class="form">
       <form>
         <p class="form__desc">
           Заполните форму и мы с вами свяжемся в течение часа
@@ -367,6 +376,7 @@ const { $csrfFetch } = useNuxtApp();
 const taxopark = ref(null);
 const whatToDo = ref(null);
 const threats = ref(null);
+const help = ref(null);
 const error = ref(false);
 const success = ref(false);
 const disabled = ref(false);
@@ -451,6 +461,9 @@ const scrollToBlock = (refName) => {
       break;
     case 'threats':
       targetBlock = threats.value;
+      break;
+    case 'help':
+      targetBlock = help.value;
       break;
     default:
       console.log('Неверное имя блока');
